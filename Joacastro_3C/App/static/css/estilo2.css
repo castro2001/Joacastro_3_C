@@ -1,0 +1,86 @@
+body{
+    background-image: url('fondo2.jpg');
+    background-position: center;
+    background-size: cover ;
+    background-repeat: no-repeat;
+
+}
+
+.contenedor{
+    display: flex;
+ 
+    justify-content: space-between;
+    padding: 0 15px;
+    align-items: center;
+    align-content: center;
+    
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.contenedor--m{
+    display: flex;
+ 
+    justify-content: space-between;
+    padding: 0 15px;
+    align-items: center;
+    align-content: center;
+    
+    position: absolute;
+    top: 80%;
+}
+.btn_tabla{
+    display: flex;
+
+    flex-direction: column;
+}
+
+.messages{
+    color: aliceblue;
+    font-size: 2.5rem;
+    margin-bottom: 18px;
+    z-index: 100;
+}
+
+.contenedor button{
+    margin-top: 18px;
+}
+
+.modal--width{
+width: 8750px;
+}
+
+.contenedor__update{
+    padding: 0 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 10%;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

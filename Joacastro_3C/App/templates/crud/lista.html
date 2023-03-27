@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>listado</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg bg-dark text-white">
+                
+      <ul class="d-flex p-2  justify-content-around " style=" width:90%;    list-style: none;">
+        <li>
+          <a class="navbar-brand text-white " href="{% url 'Inicio'  %}">Canciones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page" href="{% url 'Inicio'  %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'Lista' %}">Lista de Canciones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'Administrador' %}">Administrador</a>
+        </li>
+        <li class="nav-item">
+          <i class="fa fa-solid fa-user"> </i>
+          {% for item in listado  %}
+         {{item.usuario}}
+         </h3>
+         {% endfor %}
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'salir' %}" class="ms-5 text-white"> <i class="fa fa-solid fa-right-from-bracket" aria-hidden="true"></i></a>
+        </li>
+
+    
+      </ul>
+    </nav>
+  </header>
+  <main class="container mt-5">
+
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <div class="col">
+        <div class="card">
+          <div class="card-body text-white bg-dark">
+            <h5 class="card-title text-center">Artista</h5>
+          </div>
+          <img src="..." class="card-img-top" alt="portada_musica">
+          <div class="card-body text-white bg-dark">
+            <h5 class="card-title">tEMA DE LA MUSICA</h5>
+          </div>
+          <div class="card-footer text-white bg-dark">
+            <button type="button" class="btn btn-outline-light">Ver Más</button>
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+    
+    
+  </main>
+
+  
+</div>
+  <footer>
+    <!-- place footer here -->
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

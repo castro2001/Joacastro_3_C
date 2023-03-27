@@ -1,0 +1,94 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Informacion</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/estilo3.css' %}"
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar bg-dark text-white">
+            <ul class="d-flex p-2  justify-content-around " style=" width:90%;    list-style: none;
+      ">
+        <li>
+          <a class="navbar-brand text-white " href="{% url 'Inicio'  %}">Canciones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page" href="{% url 'Inicio'  %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'Lista' %}">Lista de Canciones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'Administrador' %}">Administrador</a>
+        </li>
+        <li class="nav-item">
+          <i class="fa fa-solid fa-user"> </i>
+          {% for item in listado  %}
+          {{item.usuario}}
+          </h3>
+          {% endfor %}
+      
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'salir' %}" class="ms-5 text-white"> <i class="fa fa-solid fa-right-from-bracket" aria-hidden="true"></i></a>
+        </li>
+
+      
+      
+    </nav>
+  </header>
+
+    <main class="container mt-5">
+        
+        <div class="row">
+            <div class="col-4">
+              <img src="{{artista.foto.url}}" class="img-fluid img-thumbail "  style="height: 80%;">
+            </div>
+            <div class="col-8">
+            <h2><strong>Artista:</strong> {{artista.nombre}}</h2>
+            <p ><strong>Descripcion:</strong> {{artista.descripcion}}</p>
+            <p ><strong>Album</strong> {{album.titulo}}</p>
+            <p ><strong>descripcion</strong> {{album.descripcion}}</p>
+            <audio controls>
+                <source src="{{ cancion.archivo_audio.url }}" type="audio/mp3">
+                Your browser does not support the audio element.
+              </audio>
+              
+            {% comment %} <p><strong>Personaje:</strong>    {{artista.Alter_Ego}}</p>
+            <p><strong>Primera Aparición:</strong>    {{artista.Primera_Aparicion}}</p>
+            <p><strong>Descripción:</strong>   {{artista.Description}}</p> {% endcomment %}
+            
+            <a class="btn btn-outline-success" href="{% url 'Inicio' %}">Regresar</a>
+            </div>
+          </div>
+
+    </main>
+<footer>
+<!-- place footer here -->
+</footer>
+<!-- Bootstrap JavaScript Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+</script>
+</body>
+
+</html>

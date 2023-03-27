@@ -1,0 +1,65 @@
+body{
+    background-image: url('fondo1.jpg');
+    background-position: center;
+    background-size: cover ;
+    background-repeat: no-repeat;
+
+}
+
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.title{
+    color: aliceblue;
+    font-size: 2.5rem;
+    margin-bottom: 18px;
+}
+
+.contenedor button{
+    margin-top: 18px;
+}
+
+.error{
+
+    background-color: red;
+    width: 250px;
+    height: 15px;
+    border: none;
+
+}
+
+.contenedor_principal{
+
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
