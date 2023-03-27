@@ -57,24 +57,20 @@
         
         <div class="row">
             <div class="col-4">
-              <img src="{{artista.foto.url}}" class="img-fluid img-thumbail "  style="height: 80%;">
+                <h2><strong>Artista:</strong> {{artista.nombre}}</h2>
+            <p style="    text-align: justify"><strong>Descripcion:</strong> {{artista.descripcion}}</p>
+    
+           
             </div>
-            <div class="col-8">
-            <h2><strong>Artista:</strong> {{artista.nombre}}</h2>
-            <p ><strong>Descripcion:</strong> {{artista.descripcion}}</p>
-            <p ><strong>Album</strong> {{album.titulo}}</p>
-            <p ><strong>descripcion</strong> {{album.descripcion}}</p>
-            <audio controls>
-                <source src="{{ cancion.archivo_audio.url }}" type="audio/mp3">
-                Your browser does not support the audio element.
-              </audio>
-              
-            {% comment %} <p><strong>Personaje:</strong>    {{artista.Alter_Ego}}</p>
-            <p><strong>Primera Aparición:</strong>    {{artista.Primera_Aparicion}}</p>
-            <p><strong>Descripción:</strong>   {{artista.Description}}</p> {% endcomment %}
-            
+            <div class="col-7">
+            <h2><strong>Album:</strong> {{album.titulo}}</h2>
+            <h5><strong>Tema:</strong> {{canciones.titulo}}</h5>
+
+            <p style="    text-align: justify"><strong>Descripcion:</strong> {{artista.descripcion}}</p>
             <a class="btn btn-outline-success" href="{% url 'Inicio' %}">Regresar</a>
             </div>
+          
+            
           </div>
 
     </main>

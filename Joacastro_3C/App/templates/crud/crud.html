@@ -96,7 +96,7 @@
       Tabla Canciones
     </button>
 
-    <button type="button" class="btn  btn-outline-info" data-bs-toggle="modal" data-bs-target="#staticBackdropdetalle">
+    <button type="button" class="btn  btn-outline-info" data-bs-toggle="modal" data-bs-target="#staticBackdropCrearRelacion">
       Tabla Detalle
     </button>
   </div>
@@ -175,7 +175,6 @@
                 <th scope="row">{{item.id}}</th>
                 <td >{{item.titulo}}</td>
                 <td style="width:250px;text-align:justify">{{item.descripcion}}</td>
-                <td style="width;50px ">{{item.portada}}</td>
                 <td >
                   <a href="{% url 'ActualizarAlbum' item.id %}" class="btn btn-outline-primary">Actualizar</a>
                   <a href="{% url 'EliminarAlbum' item.id %}" class="btn btn-outline-danger" onclick="return confirm('¿Estás seguro de que quieres borrar este album?')">Eliminar</a>
@@ -306,10 +305,7 @@
             <label for="exampleInputEmail1" class="form-label">Descripción</label>
             <input type="txt" class="form-control" id="exampleInputEmail1" name="descripcion" aria-describedby="descripcion del arsitat">
           </div>
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Foto</label>
-            <input type="file" class="form-control" id="exampleInputEmail1" name="foto"  aria-describedby="emailHelp">
-          </div>
+          
 
           <button type="submit" class="btn btn-outline-primary ms-5">Crear</button>
         </form>
@@ -339,10 +335,7 @@
             <label for="exampleInputEmail1" class="form-label">Descripción</label>
             <input type="txt" class="form-control" id="exampleInputEmail1" name="descripcionA" aria-describedby="descripcion del arsitat">
           </div>
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Portada</label>
-            <input type="file" class="form-control" id="exampleInputEmail1" name="portadaA"  aria-describedby="emailHelp">
-          </div>
+          
 
           <button type="submit" class="btn btn-outline-primary ms-5">Crear</button>
         </form>
@@ -368,10 +361,7 @@
             <input type="txt" class="form-control" id="exampleInputEmail1" name="musica" aria-describedby="D">
           </div>
         
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Ruta de la Musica</label>
-            <input type="file" class="form-control" id="exampleInputEmail1" name="url"  aria-describedby="emailHelp">
-          </div>
+       
 
           <button type="submit" class="btn btn-outline-primary ms-5">Crear</button>
         </form>

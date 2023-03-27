@@ -34,7 +34,7 @@ def baseCrud(request):
         'artista': artistas,
         'album': albunes,
         'cancion': canciones,
-        'detalle': detalle,
+        'detalle': mostrar,
     }
 
     return render(request,'crud/crud.html',context)
@@ -78,12 +78,10 @@ def salir(request):
 def Crear_Artista(request):
     artista= request.POST['artista']
     descripcion= request.POST['descripcion']
-    fotoS= request.FILES['foto']
 
     crear = Artista.objects.create(
          nombre= artista,
          descripcion= descripcion,
-         foto=fotoS
     )
     messages.success(request, 'Artista Creado!')
     return redirect('Administrador')
@@ -102,12 +100,10 @@ def actualizar_Artista(request):
     id= int(request.POST['id'])
     titulo_albums= request.POST['titulo_A']
     descripcion_album= request.POST['descripcionA']
-    portada_disco= request.FILES['portadaA']
 
     album = Artista.objects.get(id=id)
     album.nombre = titulo_albums
     album.descripcion= descripcion_album,
-    album.foto =portada_disco
     album.save()
     messages.success(request, 'Album Actualizado!')
     return redirect('Administrador')
@@ -123,12 +119,10 @@ def Delete_Artista(request,id):
 def Crear_Albums(request):
     titulo_albums= request.POST['titulo_A']
     descripcion_album= request.POST['descripcionA']
-    portada_disco= request.FILES['portadaA']
 
     crear = Albums.objects.create(
          titulo= titulo_albums,
          descripcion= descripcion_album,
-         portada=portada_disco
     )
     messages.success(request, 'Album Creado!')
     return redirect('Administrador')
@@ -145,12 +139,10 @@ def actualizar_Albums(request):
     id= int(request.POST['id'])
     titulo_albums= request.POST['titulo_A']
     descripcion_album= request.POST['descripcionA']
-    portada_disco= request.POST['portadaA']
 
     album = Artista.objects.get(id=id)
     album.nombre = titulo_albums
     album.descripcion= descripcion_album,
-    album.foto =portada_disco
     album.save()
     messages.success(request, 'Album Actualizado!')
     return redirect('Administrador')
@@ -166,11 +158,9 @@ def Delete_Albums(request,id):
 #cancion
 def Crear_Cancion(request):
     musica= request.POST['musica']
-    url_musica= request.FILES['url']
 
     crear = Cancion.objects.create(
          titulo= musica,
-         archivo_audio= url_musica
     )
     messages.success(request, 'Cancion Creado!')
   
@@ -186,12 +176,10 @@ def Update_Cancion(request,id):
 
 def actualizar_Cancion(request):
     id= int(request.POST['id'])
-    musica= request.POST['musica']
-    url_musica= request.FILES['url']
+    musica= request.POST['titulo_A']
 
     album = Cancion.objects.get(id=id)
     album.titulo = musica
-    album.archivo_audio= url_musica,
   
     album.save()
     messages.success(request, 'Cancion Actualizada')
