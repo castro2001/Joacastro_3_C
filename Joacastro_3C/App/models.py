@@ -14,7 +14,7 @@ class Artista(models.Model):
     id = models.IntegerField( primary_key=True, verbose_name='ID')
     nombre = models.CharField(verbose_name='Nombre del Artista', max_length=150)
     descripcion = models.CharField(verbose_name='Descripcion', max_length=300)
-    foto = models.FileField(upload_to='images/', null=True, blank=True)
+    # foto = models.ImageField(upload_to='images/', null=True, blank=True)
 
   
 
@@ -22,12 +22,12 @@ class Albums(models.Model):
     id = models.IntegerField( primary_key=True, verbose_name='ID')
     titulo = models.CharField(verbose_name='Titulo del Album', max_length=150, null=False    )
     descripcion = models.CharField(verbose_name='Descripcion del Album', max_length=300)
-    portada = models.FileField(upload_to='images/', null=True, blank=True)
+    # portada = models.ImageField(upload_to='images/', null=True, blank=True)
     
 class Cancion(models.Model):
     id = models.IntegerField( primary_key=True, verbose_name='ID')
     titulo = models.CharField(verbose_name='Titulo de la Cancion', max_length=150)
-    archivo_audio = models.FileField(upload_to='images/', null=True, blank=True) # campo para subir el archivo de audio
+    # archivo_audio = models.FileField(upload_to='images/', null=True, blank=True) # campo para subir el archivo de audio
     # album = models.CharField(verbose_name='Titulo de la Cancion', max_length=150)
     
 class detalle (models.Model):

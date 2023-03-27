@@ -102,7 +102,7 @@ def actualizar_Artista(request):
     id= int(request.POST['id'])
     titulo_albums= request.POST['titulo_A']
     descripcion_album= request.POST['descripcionA']
-    portada_disco= request.POST['portadaA']
+    portada_disco= request.FILES['portadaA']
 
     album = Artista.objects.get(id=id)
     album.nombre = titulo_albums
@@ -187,7 +187,7 @@ def Update_Cancion(request,id):
 def actualizar_Cancion(request):
     id= int(request.POST['id'])
     musica= request.POST['musica']
-    url_musica= request.POST['url']
+    url_musica= request.FILES['url']
 
     album = Cancion.objects.get(id=id)
     album.titulo = musica
@@ -218,5 +218,5 @@ def Informacio_cancion(request,id):
          'album':album,
          'canciones':canciones,
     }
-    info.save
+    info.save()
     return render(request, 'crud/info.html ',context)
